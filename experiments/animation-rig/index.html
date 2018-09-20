@@ -3,7 +3,7 @@
   <head>
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-    <script src="js/inflate.min.js"></script>
+    <script src="../libs/inflate.min.js"></script>
     <script src="https://rawgit.com/rhiannanberry/aframe-extras/master/dist/aframe-extras.js"></script>
     <script src="js/animation-rig.js"></script>
     <script src="js/main.js"></script> 
@@ -12,10 +12,10 @@
   <body>
     <a-scene>
      <a-assets>
-    <img id="sky" src="tex/space.jpg">
-    <img id="grid" src="tex/gridPattern.png" >
-    <img id="pink" src="tex/pink.jpg"> 
-    <img id="chrome" src="tex/chrome.jpg"> 
+    <img id="sky" src="../tex/space.jpg">
+    <img id="grid" src="../tex/gridPattern.png" >
+    <img id="pink" src="../tex/pink.jpg"> 
+    <img id="chrome" src="../tex/chrome.jpg"> 
     </a-assets>
 
         
@@ -26,7 +26,7 @@
                 rotation="0 0 0"
                 animation-rig
                 rig-control
-                fbx-model="src: url(models/fbx/samba mesh.fbx);"
+                fbx-model="src: url(../models/fbx/samba mesh.fbx);"
                 
     ></a-entity>
     

@@ -15,7 +15,7 @@ AFRAME.registerComponent('rig-control', {
 
     //Can load animation sets from a single fbx, and apply it to a different fbx
     //Or load a single animation from an fb and apply it to a different fbx
-    loader.load( 'models/fbx/samba anims.fbx', function ( object ) {
+    loader.load( '../models/fbx/samba anims.fbx', function ( object ) {
       avatar.addEventListener('model-loaded', function() {
         var model = avatar.getObject3D('mesh');
         if (!object.animations){
