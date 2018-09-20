@@ -1,24 +1,26 @@
 var prevData = "clip: idle; crossFadeDuration: .3";;
-    var listenerAdded = false;
-    var scene = document.querySelector('a-scene');  
-    var playOnce = false;
-    var sceneT = null;
+var listenerAdded = false;
+var scene = document.querySelector('a-scene');
+var playOnce = false;
+var sceneT = null;
 
 AFRAME.registerComponent('rig-control', {
-  schema: {default: ''},
+  schema: {
+    default: ''
+  },
   init() {
-     
-    var avatar = document.querySelector('#test');  
+
+    var avatar = document.querySelector('#test');
     var scene = document.querySelector('a-scene');
 
     var loader = new THREE.FBXLoader();
 
     //Can load animation sets from a single fbx, and apply it to a different fbx
     //Or load a single animation from an fb and apply it to a different fbx
-    loader.load( '../models/fbx/samba anims.fbx', function ( object ) {
-      avatar.addEventListener('model-loaded', function() {
+    loader.load('../models/fbx/samba anims.fbx', function (object) {
+      avatar.addEventListener('model-loaded', function () {
         var model = avatar.getObject3D('mesh');
-        if (!object.animations){
+        if (!object.animations) {
           console.warn('animation fbx does not contain animations!');
           return;
         }
@@ -29,7 +31,7 @@ AFRAME.registerComponent('rig-control', {
           model.animations.push(object.animations);
         }
         console.log(model);
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
           if (e.key == '1') {
             console.log('looks painful');
             avatar.setAttribute('animation-rig', 'clip: Armature|idle; crossFadeDuration: .3;');
@@ -39,6 +41,6 @@ AFRAME.registerComponent('rig-control', {
         });
       });
     });
-     
+
   }
 });

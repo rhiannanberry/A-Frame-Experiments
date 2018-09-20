@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" charset="utf-8" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <script src="../libs/inflate.min.js"></script>
     <script src="https://rawgit.com/rhiannanberry/aframe-extras/master/dist/aframe-extras.js"></script>
     <script src="js/animation-rig.js"></script>
     <script src="js/main.js"></script> 
+
+    <style>
+      div {width:99%; z-index: 99 !important;position: absolute;color: white; padding: .5%; line-height: .5em; text-align: center;}
+      a:link,a:visited {color: white;}
+      a:hover,a:active {color: magenta;}
+    </style>
          
   </head>
   <body>
+    <div id="details">
+      <a style="font-size: .8em;" href="https://github.com/rhiannanberry/A-Frame-Experiments/tree/master/experiments/animation-rig">~:code:~</a>
+      <p>Press 1 for idle, 2 for dance.</p>
+    </div>
     <a-scene>
      <a-assets>
     <img id="sky" src="../tex/space.jpg">
@@ -32,7 +42,6 @@
     
   <a-camera position="0 2 4">
    <a-entity 
-   text="width: 1; x-offset: -1.5; anchor: left; value: press 1 for idle, 2 for dance."
             raycaster="objects: .clickable"
             cursor="fuse: true; fuseTimeout: 500"
             position="0 0 -1"
